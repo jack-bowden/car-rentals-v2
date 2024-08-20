@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'normalize.css';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+:root {
+	height: 100%;
+	font-size: 1rem;
+}
+
+body {
+	cursor: default;
+}
+
+@media screen and (max-width: 601px) {
+	* {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	* {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+	*::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@layer base {
+	:root {
+		--background: 0 0% 96%;
+		--foreground: 0 0% 10%;
+		--card: 0 0% 96%;
+		--card-foreground: 0 0% 15%;
+		--popover: 0 0% 96%;
+		--popover-foreground: 0 95% 10%;
+		--primary: 0 72% 58%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 0 10% 90%;
+		--secondary-foreground: 0 0% 60%;
+		--muted: -38 10% 95%;
+		--muted-foreground: 0 0% 40%;
+		--accent: -38 10% 90%;
+		--accent-foreground: 0 0% 15%;
+		--destructive: 0 50% 50%;
+		--destructive-foreground: 0 0% 96%;
+		--border: 0 20% 82%;
+		--input: 0 20% 50%;
+		--ring: 0 72% 58%;
+		--radius: 0.5rem;
+		--navbar-height: 40px;
+	}
+
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
+
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
+
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
+
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+		--ring: 212.7 26.8% 83.9%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+.fade-edge {
+	mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.3),
+		black 10%,
+		black 90%,
+		rgba(0, 0, 0, 0.3)
+	);
+}
+
+.custom-input-date-picker {
+	border-radius: 15px;
+	border: 1px #0c8af8 solid;
+	padding: 4px 12px;
+	background-color: white;
+	height: 22px;
+	box-shadow: 0 0 2px #0074d9;
+}
+
+.custom-input-date-picker:focus {
+	outline: none;
+	border: 1px solid #0c8af8;
+	box-shadow: 0 0 10px 2px #0074d9;
+}
